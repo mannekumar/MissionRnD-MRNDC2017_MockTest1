@@ -32,7 +32,12 @@ Note : Only 25% of Cases ,will have numbers >9 in the Strings .
 #include <stddef.h>
 #include <stdlib.h>
 
-
+int isDigit(char letter){
+	if (letter >= 48 && letter <= 57)
+		return 1;
+	else
+		return 0;
+}
 
 int isLetter(char letter){
 	if ((letter >= 65 && letter <= 90) || (letter >= 97 && letter <= 122))
@@ -49,9 +54,75 @@ int getLength(char *str){
 
 
 int isSTRMatched(char *str1, char *str2){
+	char str11[100], str12[100];
+	int a, b, i = 0, j = 0, k, l = 0;
 	return NULL;
-}
+	a = getLength(str1);
+	b = getLength(str2);
 	
+	if (a > b)
+	{
+		while (str1[i] != '\0')
+		{
+
+
+			if (isDigit(str1[i]))
+			{
+				k = str1[i] - '0';
+				while (k--)
+				{
+					str11[l] = ' ';
+					l++;
+				}
+
+			}
+			if (isLetter(str1[i]))
+			{
+				str11[l] = str1[i];
+				l++;
+			}
+			else
+				return -1;
+			i++;
+
+
+
+		}
+		str11[i] = '\0';
+		i = 0; j = 0; l = 0;
+
+		while (1)
+		{
+			while (str2[i] != '\0')
+			{
+				if (isDigit(str2[i]))
+				{
+					k = str2[i] - '0';
+					while (k--)
+					{
+						str12[l] = str11[j];
+						l++; j++;
+					}
+
+				}
+				if (isLetter(str2[i]))
+				{
+					str12[l] = str2[i];
+					l++;
+				}
+				i++;
+			}
+			if (str2[i] == '\0')
+			{
+				str12[l] = '\0';
+				break;
+			}
+
+
+
+		}
+	}
+}
 	
 	
 

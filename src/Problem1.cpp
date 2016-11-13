@@ -37,7 +37,7 @@ struct charNode{
 };
 
 
-int isDigit(char letter){
+int isDigit1(char letter){
 	if (letter >= 48 && letter <= 57)
 		return 1;
 	else
@@ -55,7 +55,7 @@ int isDivisibleSLL(struct charNode * head, int key){
 	}
 	while (head->next != NULL)
 	{
-		if (isDigit(head->letter))
+		if (isDigit1(head->letter))
 		{
 			sum = sum * 10 + ((head->letter) - '0');
 		}
