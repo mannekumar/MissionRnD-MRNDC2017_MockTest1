@@ -37,9 +37,52 @@ struct charNode{
 };
 
 
-int isDivisibleSLL(struct charNode * head, int key){
-	
-	return 0;
+int isDigit(char letter){
+	if (letter >= 48 && letter <= 57)
+		return 1;
+	else
+		return 0;
 }
 
 
+int isDivisibleSLL(struct charNode * head, int key){
+	int sum = 0, a, b, reverse = 0;
+	if (head == NULL)
+	{
+
+		
+		return -1;
+	}
+	while (head->next != NULL)
+	{
+		if (isDigit(head->letter))
+		{
+			sum = sum * 10 + ((head->letter) - '0');
+		}
+		head = head->next;
+
+
+	}
+	sum = sum * 10 + ((head->letter) - '0');
+	a = sum;
+	while (sum != 0)
+	{
+		reverse = reverse * 10;
+		reverse = reverse + sum % 10;
+		sum = sum / 10;
+	}
+	b = reverse;
+	a = a + b;
+	if (a%key == 0)
+	{
+		
+		return 1;
+	}
+	else{
+		
+		return 0;
+	}
+
+
+
+}

@@ -32,21 +32,30 @@ Note : Only 25% of Cases ,will have numbers >9 in the Strings .
 #include <stddef.h>
 #include <stdlib.h>
 
-int isDigit(char letter){
-	return 0;
-}
+
 
 int isLetter(char letter){
-	return 0;
+	if ((letter >= 65 && letter <= 90) || (letter >= 97 && letter <= 122))
+		return 1;
+	else
+		return 0;
 }
 int getLength(char *str){
 	int len = 0;
+	while (str[len] != '\0')
+		len++;
 	return len;
 }
 
 
 int isSTRMatched(char *str1, char *str2){
+	return NULL;
+}
+	
+	
+	
+
+
 
 	
-	return -1;
-}
+	
